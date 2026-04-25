@@ -27,21 +27,13 @@ export const Hero = () => {
             from one powerful, beautifully designed platform.
           </p>
 
-          <div className="reveal mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div className="reveal mt-9 flex items-center justify-center">
             <Button
               size="lg"
               className="btn-shine group h-12 gap-2 bg-gradient-brand px-7 text-base font-semibold text-white shadow-button hover:opacity-95"
             >
               Book Free Demo
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="h-12 gap-2 border-border bg-white/70 px-6 text-base font-semibold backdrop-blur hover:bg-white"
-            >
-              <PlayCircle className="h-5 w-5 text-brand-blue" />
-              Watch How It Works
             </Button>
           </div>
         </div>
