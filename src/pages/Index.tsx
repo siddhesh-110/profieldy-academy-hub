@@ -4,7 +4,7 @@ import { Trust } from "@/components/sections/Trust";
 import { Features } from "@/components/sections/Features";
 import { WhyUs } from "@/components/sections/WhyUs";
 import { AppDownload } from "@/components/sections/AppDownload";
-import { Testimonials } from "@/components/sections/Testimonials";
+
 import { FinalCta } from "@/components/sections/FinalCta";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingContact } from "@/components/FloatingContact";
@@ -21,7 +21,7 @@ const Index = () => {
       <Features />
       <WhyUs />
       <AppDownload />
-      <Testimonials />
+      
       <FinalCta />
       <Footer />
       <FloatingContact />
