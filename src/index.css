@@ -2,94 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* ProFieldy Design System — premium light SaaS, blue + indigo + black */
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 222 47% 8%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 222 47% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 222 47% 8%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Brand */
+    --primary: 222 89% 18%;            /* deep navy/black */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --brand-blue: 220 90% 56%;
+    --brand-indigo: 245 75% 55%;
+    --brand-ink: 222 47% 8%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --secondary: 220 30% 96%;
+    --secondary-foreground: 222 47% 12%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 220 25% 96%;
+    --muted-foreground: 222 15% 45%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --accent: 220 90% 96%;
+    --accent-foreground: 222 89% 18%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --radius: 0.5rem;
+    --border: 220 20% 90%;
+    --input: 220 20% 90%;
+    --ring: 220 90% 56%;
+
+    --radius: 1rem;
+
+    /* Gradients */
+    --gradient-brand: linear-gradient(135deg, hsl(220 90% 56%), hsl(245 75% 55%));
+    --gradient-soft: radial-gradient(ellipse at top, hsl(220 90% 96%) 0%, hsl(0 0% 100%) 60%);
+    --gradient-hero: radial-gradient(60% 50% at 50% 0%, hsl(220 90% 94%) 0%, transparent 70%),
+                     radial-gradient(40% 40% at 80% 20%, hsl(245 80% 94%) 0%, transparent 70%);
+    --gradient-text: linear-gradient(135deg, hsl(222 47% 8%) 0%, hsl(220 90% 30%) 50%, hsl(245 75% 45%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 24px -8px hsl(220 60% 30% / 0.10);
+    --shadow-card: 0 10px 40px -12px hsl(220 60% 30% / 0.18);
+    --shadow-glow: 0 20px 60px -20px hsl(220 90% 56% / 0.45);
+    --shadow-button: 0 8px 24px -8px hsl(245 75% 55% / 0.55);
+
+    /* Transitions */
+    --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
@@ -99,7 +73,109 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+@layer utilities {
+  .bg-gradient-brand { background: var(--gradient-brand); }
+  .bg-gradient-soft  { background: var(--gradient-soft); }
+  .bg-gradient-hero  { background: var(--gradient-hero); }
+
+  .text-gradient {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .shadow-soft   { box-shadow: var(--shadow-soft); }
+  .shadow-card   { box-shadow: var(--shadow-card); }
+  .shadow-glow   { box-shadow: var(--shadow-glow); }
+  .shadow-button { box-shadow: var(--shadow-button); }
+
+  .glass {
+    background: hsl(0 0% 100% / 0.65);
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    border: 1px solid hsl(0 0% 100% / 0.6);
+  }
+
+  .glass-card {
+    background: linear-gradient(180deg, hsl(0 0% 100% / 0.85), hsl(220 30% 98% / 0.7));
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(220 30% 92%);
+  }
+
+  .hover-lift {
+    @apply transition-all duration-500;
+    transition-timing-function: var(--ease-smooth);
+  }
+  .hover-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-card);
+  }
+
+  .btn-shine {
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-shine::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, hsl(0 0% 100% / 0.45), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.7s var(--ease-smooth);
+  }
+  .btn-shine:hover::after {
+    left: 130%;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s var(--ease-smooth), transform 0.8s var(--ease-smooth);
+  }
+  .reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav-link {
+    @apply relative text-sm font-medium text-foreground/70 transition-colors duration-300 hover:text-foreground;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    height: 2px;
+    width: 100%;
+    background: var(--gradient-brand);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s var(--ease-smooth);
+  }
+  .nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .grid-pattern {
+    background-image:
+      linear-gradient(hsl(220 30% 92%) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(220 30% 92%) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 70% 50% at 50% 30%, black, transparent);
   }
 }
