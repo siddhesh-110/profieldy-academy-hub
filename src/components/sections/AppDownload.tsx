@@ -4,7 +4,7 @@ import appMockup from "@/assets/app-mockup.jpg";
 
 export const AppDownload = () => {
   return (
-    <section id="pricing" className="relative overflow-hidden py-24 md:py-32">
+    <section id="mobile-app" className="relative overflow-hidden py-24 md:py-32">
       <div className="absolute inset-0 -z-10 bg-gradient-soft" />
 
       <div className="container">
