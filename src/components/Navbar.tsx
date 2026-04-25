@@ -77,9 +77,12 @@ export const Navbar = () => {
             </a>
           ))}
           <div className="mt-2 flex flex-col gap-2 border-t border-border pt-3">
-            <Button className="btn-shine w-full justify-center gap-2 bg-gradient-brand text-white">
+            <a
+              href="#get-started"
+              className="btn-shine inline-flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-brand px-4 py-2.5 text-sm font-semibold text-white"
+            >
               Get Started <ArrowRight className="h-4 w-4" />
-            </Button>
+            </a>
           </div>
         </div>
       </div>
