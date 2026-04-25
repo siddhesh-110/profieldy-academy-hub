@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 export const FinalCta = () => {
   return (
-    <section className="relative py-24 md:py-32">
+    <section id="get-started" className="relative py-24 md:py-32">
       <div className="container">
         <div className="reveal relative overflow-hidden rounded-[2rem] bg-gradient-brand p-10 text-center shadow-glow md:p-16">
           {/* decorative */}

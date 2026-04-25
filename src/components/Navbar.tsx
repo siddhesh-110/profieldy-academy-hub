@@ -41,13 +41,13 @@ export const Navbar = () => {
         </div>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <Button
-            size="sm"
-            className="btn-shine gap-2 bg-gradient-brand font-semibold text-white shadow-button hover:opacity-95"
+          <a
+            href="#get-started"
+            className="btn-shine inline-flex items-center gap-2 rounded-lg bg-gradient-brand px-4 py-2 text-sm font-semibold text-white shadow-button hover:opacity-95"
           >
             Get Started
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-          </Button>
+          </a>
         </div>
 
         <button
