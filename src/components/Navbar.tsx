@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { Logo } from "./Logo";
-import { Button } from "@/components/ui/button";
 
 const links = [
   { label: "Features", href: "#features" },
