@@ -6,8 +6,6 @@ import { Button } from "@/components/ui/button";
 const links = [
   { label: "Features", href: "#features" },
   { label: "Solutions", href: "#solutions" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Testimonials", href: "#testimonials" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -42,11 +40,10 @@ export const Navbar = () => {
         </div>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <Button variant="ghost" size="sm" className="gap-2 font-medium">
-            <Download className="h-4 w-4" />
-            Download App
-          </Button>
           <Button
+            size="sm"
+            className="btn-shine gap-2 bg-gradient-brand font-semibold text-white shadow-button hover:opacity-95"
+          >
             size="sm"
             className="btn-shine gap-2 bg-gradient-brand font-semibold text-white shadow-button hover:opacity-95"
           >
