@@ -44,10 +44,6 @@ export const Hero = () => {
               Watch How It Works
             </Button>
           </div>
-
-          <p className="reveal mt-5 text-xs text-muted-foreground">
-            No credit card required · Setup in minutes · Cancel anytime
-          </p>
         </div>
 
         {/* Dashboard visual */}
