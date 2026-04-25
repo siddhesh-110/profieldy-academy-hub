@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Menu, X, Download, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import { Logo } from "./Logo";
 import { Button } from "@/components/ui/button";
 
@@ -44,9 +44,6 @@ export const Navbar = () => {
             size="sm"
             className="btn-shine gap-2 bg-gradient-brand font-semibold text-white shadow-button hover:opacity-95"
           >
-            size="sm"
-            className="btn-shine gap-2 bg-gradient-brand font-semibold text-white shadow-button hover:opacity-95"
-          >
             Get Started
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </Button>
@@ -79,9 +76,6 @@ export const Navbar = () => {
             </a>
           ))}
           <div className="mt-2 flex flex-col gap-2 border-t border-border pt-3">
-            <Button variant="outline" className="w-full justify-center gap-2">
-              <Download className="h-4 w-4" /> Download App
-            </Button>
             <Button className="btn-shine w-full justify-center gap-2 bg-gradient-brand text-white">
               Get Started <ArrowRight className="h-4 w-4" />
             </Button>
