@@ -1,4 +1,4 @@
-import { ArrowRight, Calendar } from "lucide-react";
+import { Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const FinalCta = () => {
@@ -23,21 +23,13 @@ export const FinalCta = () => {
               Setup takes minutes — results last forever.
             </p>
 
-            <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <div className="mt-9 flex items-center justify-center">
               <Button
                 size="lg"
                 className="btn-shine h-12 gap-2 bg-white px-7 text-base font-semibold text-foreground hover:bg-white/95"
               >
                 <Calendar className="h-5 w-5 text-brand-blue" />
                 Book Demo
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="h-12 gap-2 border-white/40 bg-white/10 px-7 text-base font-semibold text-white backdrop-blur hover:bg-white/20 hover:text-white"
-              >
-                Start Free Trial
-                <ArrowRight className="h-4 w-4" />
               </Button>
             </div>
           </div>
