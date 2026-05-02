@@ -44,8 +44,9 @@ export const BookDemoDialog = ({ children }: BookDemoDialogProps) => {
   const [open, setOpen] = useState(false);
   const [form, setForm] = useState<FormState>(initialState);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const result = schema.safeParse(form);
     if (!result.success) {
@@ -58,6 +59,27 @@ export const BookDemoDialog = ({ children }: BookDemoDialogProps) => {
       return;
     }
     setErrors({});
+    setSubmitting(true);
+
+    const { error } = await supabase.from("demo_requests").insert({
+      name: result.data.name,
+      academy_name: result.data.academyName,
+      academy_address: result.data.academyAddress,
+      email: result.data.email,
+      contact_method: result.data.contactMethod,
+    });
+
+    setSubmitting(false);
+
+    if (error) {
+      toast({
+        title: "Submission failed",
+        description: "Something went wrong. Please try again in a moment.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     toast({
       title: "Demo request received",
       description: "Thanks! Our team will reach out to you shortly.",
