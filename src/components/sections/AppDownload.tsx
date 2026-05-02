@@ -1,4 +1,4 @@
-import { Apple, Play, ArrowRight } from "lucide-react";
+import { Apple, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import appMockup from "@/assets/app-mockup.jpg";
 
@@ -51,13 +51,6 @@ export const AppDownload = () => {
             </div>
 
             <div className="mt-8 flex items-center gap-4">
-              <Button
-                size="lg"
-                className="btn-shine group h-12 gap-2 bg-gradient-brand px-6 font-semibold text-white shadow-button hover:opacity-95"
-              >
-                Contact Sales
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
               <p className="text-xs text-muted-foreground">
                 Get early access — be first to launch with us.
               </p>
