@@ -7,7 +7,8 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { toast } from "@/hooks/use-toast";
-import { Calendar } from "lucide-react";
+import { Calendar, Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const schema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
@@ -43,8 +44,9 @@ export const BookDemoDialog = ({ children }: BookDemoDialogProps) => {
   const [open, setOpen] = useState(false);
   const [form, setForm] = useState<FormState>(initialState);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const result = schema.safeParse(form);
     if (!result.success) {
@@ -57,6 +59,27 @@ export const BookDemoDialog = ({ children }: BookDemoDialogProps) => {
       return;
     }
     setErrors({});
+    setSubmitting(true);
+
+    const { error } = await supabase.from("demo_requests").insert({
+      name: result.data.name,
+      academy_name: result.data.academyName,
+      academy_address: result.data.academyAddress,
+      email: result.data.email,
+      contact_method: result.data.contactMethod,
+    });
+
+    setSubmitting(false);
+
+    if (error) {
+      toast({
+        title: "Submission failed",
+        description: "Something went wrong. Please try again in a moment.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     toast({
       title: "Demo request received",
       description: "Thanks! Our team will reach out to you shortly.",
@@ -159,9 +182,14 @@ export const BookDemoDialog = ({ children }: BookDemoDialogProps) => {
           <Button
             type="submit"
             size="lg"
+            disabled={submitting}
             className="btn-shine w-full bg-gradient-brand text-white shadow-button hover:opacity-95"
           >
-            Submit Request
+            {submitting ? (
+              <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Submitting...</>
+            ) : (
+              "Submit Request"
+            )}
           </Button>
         </form>
       </DialogContent>
