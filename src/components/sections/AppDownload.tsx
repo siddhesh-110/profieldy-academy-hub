@@ -1,4 +1,4 @@
-import { Apple, Play, ArrowRight } from "lucide-react";
+import { Apple, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import appMockup from "@/assets/app-mockup.jpg";
 
