@@ -182,9 +182,14 @@ export const BookDemoDialog = ({ children }: BookDemoDialogProps) => {
           <Button
             type="submit"
             size="lg"
+            disabled={submitting}
             className="btn-shine w-full bg-gradient-brand text-white shadow-button hover:opacity-95"
           >
-            Submit Request
+            {submitting ? (
+              <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Submitting...</>
+            ) : (
+              "Submit Request"
+            )}
           </Button>
         </form>
       </DialogContent>
