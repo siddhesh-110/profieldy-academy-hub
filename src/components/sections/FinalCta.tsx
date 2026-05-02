@@ -1,5 +1,6 @@
 import { Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { BookDemoDialog } from "@/components/BookDemoDialog";
 
 export const FinalCta = () => {
   return (
@@ -24,13 +25,15 @@ export const FinalCta = () => {
             </p>
 
             <div className="mt-9 flex items-center justify-center">
-              <Button
-                size="lg"
-                className="btn-shine h-12 gap-2 bg-white px-7 text-base font-semibold text-foreground hover:bg-white/95"
-              >
-                <Calendar className="h-5 w-5 text-brand-blue" />
-                Book Demo
-              </Button>
+              <BookDemoDialog>
+                <Button
+                  size="lg"
+                  className="btn-shine h-12 gap-2 bg-white px-7 text-base font-semibold text-foreground hover:bg-white/95"
+                >
+                  <Calendar className="h-5 w-5 text-brand-blue" />
+                  Book Demo
+                </Button>
+              </BookDemoDialog>
             </div>
           </div>
         </div>

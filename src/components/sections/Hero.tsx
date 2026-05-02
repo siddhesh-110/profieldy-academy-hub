@@ -1,5 +1,6 @@
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { BookDemoDialog } from "@/components/BookDemoDialog";
 import heroImage from "@/assets/hero-dashboard.jpg";
 
 export const Hero = () => {
@@ -28,13 +29,15 @@ export const Hero = () => {
           </p>
 
           <div className="reveal mt-9 flex items-center justify-center">
-            <Button
-              size="lg"
-              className="btn-shine group h-12 gap-2 bg-gradient-brand px-7 text-base font-semibold text-white shadow-button hover:opacity-95"
-            >
-              Book Free Demo
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
+            <BookDemoDialog>
+              <Button
+                size="lg"
+                className="btn-shine group h-12 gap-2 bg-gradient-brand px-7 text-base font-semibold text-white shadow-button hover:opacity-95"
+              >
+                Book Free Demo
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </BookDemoDialog>
           </div>
         </div>
 
