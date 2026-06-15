@@ -31,11 +31,8 @@ const sections = [
 ];
 
 const socials = [
-  { Icon: Twitter, href: "#", label: "Twitter" },
   { Icon: Instagram, href: "#", label: "Instagram" },
   { Icon: Linkedin, href: "#", label: "LinkedIn" },
-  { Icon: Facebook, href: "#", label: "Facebook" },
-  { Icon: Youtube, href: "#", label: "YouTube" },
 ];
 
 export const Footer = () => {
