@@ -26,6 +26,7 @@ type FormState = {
   academyName: string;
   academyAddress: string;
   email: string;
+  phone: string;
   contactMethod: "email" | "phone" | "whatsapp" | "";
 };
 
