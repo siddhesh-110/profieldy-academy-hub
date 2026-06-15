@@ -15,6 +15,7 @@ const schema = z.object({
   academyName: z.string().trim().min(1, "Academy name is required").max(150),
   academyAddress: z.string().trim().min(1, "Academy address is required").max(300),
   email: z.string().trim().email("Invalid email").max(255),
+  phone: z.string().trim().min(1, "Phone number is required").max(50),
   contactMethod: z.enum(["email", "phone", "whatsapp"], {
     required_error: "Select a preferred contact method",
   }),
