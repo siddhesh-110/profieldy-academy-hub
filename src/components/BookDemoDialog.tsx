@@ -69,6 +69,7 @@ export const BookDemoDialog = ({ children }: BookDemoDialogProps) => {
       academy_name: result.data.academyName,
       academy_address: result.data.academyAddress,
       email: result.data.email,
+      phone: result.data.phone,
       contact_method: result.data.contactMethod,
     });
 
