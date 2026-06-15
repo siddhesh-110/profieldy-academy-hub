@@ -15,6 +15,7 @@ const schema = z.object({
   academyName: z.string().trim().min(1, "Academy name is required").max(150),
   academyAddress: z.string().trim().min(1, "Academy address is required").max(300),
   email: z.string().trim().email("Invalid email").max(255),
+  phone: z.string().trim().min(1, "Phone number is required").max(50),
   contactMethod: z.enum(["email", "phone", "whatsapp"], {
     required_error: "Select a preferred contact method",
   }),
@@ -25,6 +26,7 @@ type FormState = {
   academyName: string;
   academyAddress: string;
   email: string;
+  phone: string;
   contactMethod: "email" | "phone" | "whatsapp" | "";
 };
 
@@ -33,6 +35,7 @@ const initialState: FormState = {
   academyName: "",
   academyAddress: "",
   email: "",
+  phone: "",
   contactMethod: "",
 };
 
@@ -66,6 +69,7 @@ export const BookDemoDialog = ({ children }: BookDemoDialogProps) => {
       academy_name: result.data.academyName,
       academy_address: result.data.academyAddress,
       email: result.data.email,
+      phone: result.data.phone,
       contact_method: result.data.contactMethod,
     });
 
@@ -154,6 +158,19 @@ export const BookDemoDialog = ({ children }: BookDemoDialogProps) => {
               placeholder="you@academy.com"
             />
             {errors.email && <p className="text-xs text-destructive">{errors.email}</p>}
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="bd-phone">Phone number</Label>
+            <Input
+              id="bd-phone"
+              type="tel"
+              value={form.phone}
+              onChange={(e) => update("phone", e.target.value)}
+              maxLength={50}
+              placeholder="+1 (555) 123-4567"
+            />
+            {errors.phone && <p className="text-xs text-destructive">{errors.phone}</p>}
           </div>
 
           <div className="space-y-2">
