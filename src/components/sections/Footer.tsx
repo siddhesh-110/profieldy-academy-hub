@@ -1,5 +1,5 @@
 import { Logo } from "@/components/Logo";
-import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
+import { Instagram, Linkedin } from "lucide-react";
 
 const sections = [
   {
