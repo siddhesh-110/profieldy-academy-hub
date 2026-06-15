@@ -35,6 +35,7 @@ const initialState: FormState = {
   academyName: "",
   academyAddress: "",
   email: "",
+  phone: "",
   contactMethod: "",
 };
 
