@@ -160,6 +160,19 @@ export const BookDemoDialog = ({ children }: BookDemoDialogProps) => {
           </div>
 
           <div className="space-y-2">
+            <Label htmlFor="bd-phone">Phone number</Label>
+            <Input
+              id="bd-phone"
+              type="tel"
+              value={form.phone}
+              onChange={(e) => update("phone", e.target.value)}
+              maxLength={50}
+              placeholder="+1 (555) 123-4567"
+            />
+            {errors.phone && <p className="text-xs text-destructive">{errors.phone}</p>}
+          </div>
+
+          <div className="space-y-2">
             <Label>Preferred contact method</Label>
             <RadioGroup
               value={form.contactMethod}
