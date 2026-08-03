@@ -3,8 +3,8 @@ import { MessageCircle, Phone, Mail, Calendar, X, Headphones } from "lucide-reac
 import { BookDemoDialog } from "@/components/BookDemoDialog";
 
 const actions = [
-  { Icon: MessageCircle, label: "WhatsApp Us", href: "https://wa.me/0000000000", color: "text-green-600 bg-green-50 hover:bg-green-100" },
-  { Icon: Phone, label: "Call Now", href: "tel:+0000000000", color: "text-brand-blue bg-blue-50 hover:bg-blue-100" },
+  { Icon: MessageCircle, label: "WhatsApp Us", href: "https://wa.me/917517344314", color: "text-green-600 bg-green-50 hover:bg-green-100" },
+  { Icon: Phone, label: "Call Now", href: "tel:+917517344314", color: "text-brand-blue bg-blue-50 hover:bg-blue-100" },
   { Icon: Mail, label: "Email Support", href: "mailto:hello@profieldy.com", color: "text-brand-indigo bg-indigo-50 hover:bg-indigo-100" },
   { Icon: Calendar, label: "Book Demo", href: "#book-demo", color: "text-foreground bg-secondary hover:bg-secondary/70", isDialog: true },
 ];
