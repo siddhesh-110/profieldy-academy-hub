@@ -68,6 +68,7 @@ export const Footer = () => {
                   <li key={l.label}>
                     <a
                       href={l.href}
+                      onClick={l.href === "#" ? (e) => e.preventDefault() : undefined}
                       className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                     >
                       {l.label}
