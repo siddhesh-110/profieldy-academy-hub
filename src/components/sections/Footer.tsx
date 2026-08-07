@@ -51,9 +51,10 @@ export const Footer = () => {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="hover-lift flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-white text-foreground/70 transition-all hover:border-transparent hover:bg-gradient-brand hover:text-white"
+                  className="hover-lift flex h-10 items-center gap-2 rounded-xl border border-border bg-white px-4 text-foreground/70 transition-all hover:border-transparent hover:bg-gradient-brand hover:text-white"
                 >
                   <Icon className="h-4 w-4" />
+                  <span className="text-sm font-medium">{label}</span>
                 </a>
               ))}
             </div>
