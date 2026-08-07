@@ -1,5 +1,5 @@
 import { Logo } from "@/components/Logo";
-import { Instagram, Linkedin } from "lucide-react";
+import { Linkedin } from "lucide-react";
 
 const sections = [
   {
@@ -31,7 +31,6 @@ const sections = [
 ];
 
 const socials = [
-  { Icon: Instagram, href: "#", label: "Instagram" },
   { Icon: Linkedin, href: "#", label: "LinkedIn" },
 ];
 
