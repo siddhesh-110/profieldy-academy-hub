@@ -117,7 +117,7 @@ export const BookDemoDialog = ({ children }: BookDemoDialogProps) => {
               value={form.name}
               onChange={(e) => update("name", e.target.value)}
               maxLength={100}
-              placeholder="Jane Doe"
+              placeholder="Rahul Sharma"
             />
             {errors.name && <p className="text-xs text-destructive">{errors.name}</p>}
           </div>
@@ -141,7 +141,7 @@ export const BookDemoDialog = ({ children }: BookDemoDialogProps) => {
               value={form.academyAddress}
               onChange={(e) => update("academyAddress", e.target.value)}
               maxLength={300}
-              placeholder="Street, City, State"
+              placeholder="12 MG Road, Bangalore, Karnataka"
               rows={2}
             />
             {errors.academyAddress && <p className="text-xs text-destructive">{errors.academyAddress}</p>}
@@ -168,7 +168,7 @@ export const BookDemoDialog = ({ children }: BookDemoDialogProps) => {
               value={form.phone}
               onChange={(e) => update("phone", e.target.value)}
               maxLength={50}
-              placeholder="+1 (555) 123-4567"
+              placeholder="+91 98765 43210"
             />
             {errors.phone && <p className="text-xs text-destructive">{errors.phone}</p>}
           </div>
